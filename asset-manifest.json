@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/simple-catalog/static/css/main.09228d8b.css",
+    "main.js": "/simple-catalog/static/js/main.063aa64a.js",
+    "index.html": "/simple-catalog/index.html",
+    "main.09228d8b.css.map": "/simple-catalog/static/css/main.09228d8b.css.map",
+    "main.063aa64a.js.map": "/simple-catalog/static/js/main.063aa64a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09228d8b.css",
+    "static/js/main.063aa64a.js"
+  ]
+}
