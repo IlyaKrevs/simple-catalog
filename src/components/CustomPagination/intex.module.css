@@ -1,0 +1,19 @@
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.defaultButton {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.currentPage {
+    color: red;
+    font-weight: 600;
+}
+
+.ellipsis {
+    padding: 10px 0;
+}

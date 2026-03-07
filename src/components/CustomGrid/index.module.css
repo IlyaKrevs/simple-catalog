@@ -1,0 +1,22 @@
+.gridContainer {
+    position: relative;
+    display: grid;
+    border: 1px solid black;
+    padding: 5px;
+    gap: 5px;
+}
+
+
+.titleCell {
+    font-weight: 600;
+}
+
+.defaultCell {
+    display: flex;
+    align-items: center;
+}
+
+.imgCell {
+    aspect-ratio: 1/1;
+    width: 30px;
+}
