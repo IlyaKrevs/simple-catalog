@@ -15,4 +15,3 @@ export interface IUserProps {
     role: string,
     gender: string,
 }
-

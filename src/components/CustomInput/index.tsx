@@ -6,10 +6,13 @@ interface IProps {
     handleDebounceInput: (v: string) => void,
 }
 
-export const CustomInput: React.FC<IProps> = ({ input, handleInput, handleDebounceInput }) => {
+export const CustomInput: React.FC<IProps> = ({
+    input,
+    handleInput,
+    handleDebounceInput
+}) => {
 
     const timeoutIdRef = useRef<NodeJS.Timeout>(null);
-
     const handleOnChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         handleInput(value);
@@ -22,6 +25,7 @@ export const CustomInput: React.FC<IProps> = ({ input, handleInput, handleDeboun
             handleDebounceInput(value);
         }, 300);
     }, [handleDebounceInput, handleInput])
+
     return (
         <div className={styles.inputContainer}>
             <input type="text" value={input} onChange={handleOnChange} />

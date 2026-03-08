@@ -8,7 +8,12 @@ interface IProps {
     pickPage: (v: number) => void,
 }
 
-export const CustomPaginatiom: React.FC<IProps> = ({ current, total, perPage, pickPage }) => {
+export const CustomPaginatiom: React.FC<IProps> = ({
+    current,
+    total,
+    perPage,
+    pickPage
+}) => {
     const totalPages = Math.ceil(total / perPage);
 
     const prevFromCurrent = Math.max(1, current - 1);
@@ -54,7 +59,7 @@ export const CustomPaginatiom: React.FC<IProps> = ({ current, total, perPage, pi
                             styles.defaultButton,
                             current === item ? styles.currentPage : ''
                         ].join(' ')}
-                        onClick={() => pickPage(item as number)}
+                        onClick={() => pickPage(item)}
                     >
                         {item}
                     </button>

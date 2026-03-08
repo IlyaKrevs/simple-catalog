@@ -5,7 +5,9 @@ interface IProps {
     loading: boolean;
 }
 
-export const CustomSpinner: React.FC<IProps> = ({ loading }) => {
+export const CustomSpinner: React.FC<IProps> = ({
+    loading
+}) => {
     if (!loading) {
         return null;
     }

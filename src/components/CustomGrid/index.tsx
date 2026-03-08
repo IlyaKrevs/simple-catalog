@@ -9,7 +9,12 @@ interface IProps {
     imageKeys: string[];
 }
 
-export const CustomGrid: React.FC<IProps> = ({ titles, data, loading, imageKeys }) => {
+export const CustomGrid: React.FC<IProps> = ({
+    titles,
+    data,
+    loading,
+    imageKeys
+}) => {
     return (
         <div
             className={styles.gridContainer}
@@ -17,7 +22,9 @@ export const CustomGrid: React.FC<IProps> = ({ titles, data, loading, imageKeys 
                 gridTemplateColumns: `repeat(${titles.length}, 1fr)`,
             }}
         >
-            <CustomSpinner loading={loading} />
+            <CustomSpinner
+                loading={loading}
+            />
             {titles.map(item => {
                 return <div className={styles.titleCell}>
                     {item}
@@ -25,13 +32,14 @@ export const CustomGrid: React.FC<IProps> = ({ titles, data, loading, imageKeys 
             })}
 
             {data.map(item => {
-                return Object.entries(item).map(([key, value]) => {
-                    if (imageKeys.includes(key)) {
-                        return <img className={styles.imgCell} src={value + ''} alt={key} />
-                    } else {
-                        return <div className={styles.defaultCell}>{value}</div>
-                    }
-                })
+                return Object.entries(item)
+                    .map(([key, value]) => {
+                        if (imageKeys.includes(key)) {
+                            return <img className={styles.imgCell} src={value + ''} alt={key} />
+                        } else {
+                            return <div className={styles.defaultCell}>{value}</div>
+                        }
+                    })
             })}
         </div>
     )

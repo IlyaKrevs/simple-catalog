@@ -24,7 +24,7 @@ const selectedKeys = Object.keys(sampleUser) as UserWantedKeys[];
 const DEFAULT_USERS_PER_PAGE = 10;
 
 function App() {
-  const [data, setData] = useState<IResponse | null>(null);
+  const [data, setData] = useState<IResponse>();
   const [err, setErr] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState('');
@@ -47,7 +47,7 @@ function App() {
       setErr(null);
       fetch(mainEndpoint + additionalEndpoint + '&' + defaultSearchParams, { signal: controller.signal })
         .then(res => res.json())
-        .then((data: IResponse | null) => {
+        .then((data: IResponse) => {
           setData(data);
         })
         .catch(e => {
