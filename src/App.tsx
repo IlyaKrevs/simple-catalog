@@ -27,7 +27,7 @@ function App() {
   const [data, setData] = useState<IResponse>();
   const [err, setErr] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [input, setInput] = useState('');
+
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
 
@@ -83,8 +83,6 @@ function App() {
     <div className={styles.App}>
 
       <CustomInput
-        input={input}
-        handleInput={setInput}
         handleDebounceInput={handlerSetSearchQuery}
       />
 

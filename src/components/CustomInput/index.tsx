@@ -1,21 +1,17 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import styles from './index.module.css';
 interface IProps {
-    input: string,
-    handleInput: (v: string) => void,
     handleDebounceInput: (v: string) => void,
 }
 
 export const CustomInput: React.FC<IProps> = ({
-    input,
-    handleInput,
     handleDebounceInput
 }) => {
-
+    const [input, setInput] = useState('');
     const timeoutIdRef = useRef<NodeJS.Timeout>(null);
     const handleOnChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        handleInput(value);
+        setInput(value);
 
         if (timeoutIdRef.current) {
             clearTimeout(timeoutIdRef.current);
@@ -24,7 +20,7 @@ export const CustomInput: React.FC<IProps> = ({
         timeoutIdRef.current = setTimeout(() => {
             handleDebounceInput(value);
         }, 300);
-    }, [handleDebounceInput, handleInput])
+    }, [handleDebounceInput])
 
     return (
         <div className={styles.inputContainer}>
